@@ -1,4 +1,5 @@
 import './globals.css'
+import { PlayerContextProvider } from '../contexts/PlayerContext';
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>        
+        {children}
+      </body>
     </html>
   )
 }
