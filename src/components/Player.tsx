@@ -50,7 +50,7 @@ export function Player() {
   const url = 'https://traffic.omny.fm/d/clips/651a251e-06e1-47e0-9336-ac5a00f41628/5383c6c4-fb3f-4773-b1d7-addc0130037c/5745b567-180a-49fe-bc61-afb200845c73/audio.mp3'
 
   return (
-    <div className="flex flex-col pt-24 gap-12 justify-items-end">
+    <div className="flex flex-col gap-12 justify-items-end">
     
       <audio
         src={url}
@@ -62,7 +62,7 @@ export function Player() {
         onLoadedMetadata={setupProgressListener}
       />
       <img
-        className="shadow-3xl shadow-pink-600/5"
+        className="shadow-3xl shadow-pink-600/3"
         src="https://www.omnycontent.com/d/clips/651a251e-06e1-47e0-9336-ac5a00f41628/5383c6c4-fb3f-4773-b1d7-addc0130037c/5745b567-180a-49fe-bc61-afb200845c73/image.jpg?t=1677147791&size=Medium"
       ></img>
       <h2 className="text-slate-50 text-center mb-4 text-3xl">#153 - Adnan Syed: erro da justiça? | Parte 2</h2>
@@ -80,7 +80,7 @@ export function Player() {
         <button type='button' className=" py-1 px-2 rounded-2xl" onClick={playPrevious}>
           <img src='/play-previous.svg' alt='Tocar anterior' />
         </button>
-        <button className="bg-pink-600 shadow-3xl shadow-pink-600/20 p-1 h-16 flex w-16 flex items-center justify-center	rounded-full" type='button' onClick={togglePlay}>
+        <button className="bg-pink-600 shadow-3xl shadow-pink-600/10 p-1 h-16 flex w-16 flex items-center justify-center	rounded-full" type='button' onClick={togglePlay}>
           {isPlaying ? <img src='/pause.svg' alt='Pausar' /> : <img src='/play.svg' alt='Tocar' />}
         </button>
         <button type='button' className=" py-1 px-2 rounded-2xl" onClick={playNext}>
