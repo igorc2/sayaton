@@ -21,6 +21,8 @@ export function Player() {
 		} else {
 			audioRef.current.pause();
 		}
+    
+
 	}, [isPlaying]);
 
 	function setupProgressListener() {
@@ -48,7 +50,7 @@ export function Player() {
   const url = 'https://traffic.omny.fm/d/clips/651a251e-06e1-47e0-9336-ac5a00f41628/5383c6c4-fb3f-4773-b1d7-addc0130037c/5745b567-180a-49fe-bc61-afb200845c73/audio.mp3'
 
   return (
-    <>
+    <div className="flex flex-col pt-24 gap-12 justify-items-end">
     
       <audio
         src={url}
@@ -59,11 +61,15 @@ export function Player() {
         onPause={() => setPlayingState(false)}
         onLoadedMetadata={setupProgressListener}
       />
+      <img
+        className="shadow-3xl shadow-pink-600/5"
+        src="https://www.omnycontent.com/d/clips/651a251e-06e1-47e0-9336-ac5a00f41628/5383c6c4-fb3f-4773-b1d7-addc0130037c/5745b567-180a-49fe-bc61-afb200845c73/image.jpg?t=1677147791&size=Medium"
+      ></img>
+      <h2 className="text-slate-50 text-center mb-4 text-3xl">#153 - Adnan Syed: erro da justiça? | Parte 2</h2>
       <div className="w-full">
-        <h2 className="text-slate-50 text-center mb-4 text-2xl">#153 - Adnan Syed: erro da justiça? | Parte 2</h2>
         <Slider max={2843} value={progress} onChange={handleSeek} trackStyle={{backgroundColor: '#db2777'}} railStyle={{backgroundColor: '#1b0d3b'}} handleStyle={{borderColor: '#db2777'}} />
         <div className="flex justify-between">
-          <span className="text-slate-50">00:00</span>
+          <span className="text-slate-50">{new Date(progress * 1000).toISOString().substring(14, 19)}</span>
           <span className="text-slate-50">18:00</span>
         </div>
       </div>
@@ -84,7 +90,7 @@ export function Player() {
           <img src='/repeat.svg' alt='Repetir' />
         </button>
       </div>
-    </>
+    </div>
   )
 
 }
