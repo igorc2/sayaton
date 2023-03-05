@@ -60,21 +60,29 @@ export function Player() {
         onLoadedMetadata={setupProgressListener}
       />
       <div className="w-full">
-        <Slider max={100} value={progress} onChange={handleSeek} trackStyle={{backgroundColor: '#04d361'}} railStyle={{backgroundColor: '#9f75ff'}} handleStyle={{borderColor: '#04d361', borderWidth: 4}} />
+        <h2 className="text-slate-50 text-center mb-4 text-2xl">#153 - Adnan Syed: erro da justiça? | Parte 2</h2>
+        <Slider max={2843} value={progress} onChange={handleSeek} trackStyle={{backgroundColor: '#db2777'}} railStyle={{backgroundColor: '#1b0d3b'}} handleStyle={{borderColor: '#db2777'}} />
+        <div className="flex justify-between">
+          <span className="text-slate-50">00:00</span>
+          <span className="text-slate-50">18:00</span>
+        </div>
       </div>
-      <div className="drop-shadow-md bg-orange-900 rounded-l-lg w-full -mr-16 p-4 flex gap-4 align-middle">
-        <button type='button' className="bg-orange-800 py-1 px-2 rounded-2xl" onClick={playPrevious}>
+      <div className="drop-shadow-md w-full justify-evenly flex gap-4">
+        <button type='button' onClick={toggleLoop} >
+          <img src='/shuffle.svg' alt='Repetir' />
+        </button>
+        <button type='button' className=" py-1 px-2 rounded-2xl" onClick={playPrevious}>
           <img src='/play-previous.svg' alt='Tocar anterior' />
         </button>
-        <button className="bg-orange-800 p-1 h-10 w-10 flex align-center justify-center	rounded-2xl" type='button' onClick={togglePlay}>
+        <button className="bg-pink-600 shadow-3xl shadow-pink-600/20 p-1 h-16 flex w-16 flex items-center justify-center	rounded-full" type='button' onClick={togglePlay}>
           {isPlaying ? <img src='/pause.svg' alt='Pausar' /> : <img src='/play.svg' alt='Tocar' />}
         </button>
-        <button type='button' className="bg-orange-800 py-1 px-2 rounded-2xl" onClick={playNext}>
+        <button type='button' className=" py-1 px-2 rounded-2xl" onClick={playNext}>
           <img src='/play-next.svg' alt='Tocar próxima' />
         </button>
-        {/* <button type='button' onClick={toggleLoop} >
+        <button type='button' onClick={toggleLoop} >
           <img src='/repeat.svg' alt='Repetir' />
-        </button> */}
+        </button>
       </div>
     </>
   )
